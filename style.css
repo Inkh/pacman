@@ -28,5 +28,6 @@ div.pacman{
     background-image: url('pacman.gif');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 80% 80%;
+    /*background-size: 80% 80%;*/
+    background-size: cover;
 }
