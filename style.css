@@ -20,6 +20,10 @@ div.coin{
     background-position: center;
 }
 
+div.empty{
+
+}
+
 body{
     /*background-color: black;*/
     margin:0px;
