@@ -1,7 +1,7 @@
 *{
     /*margin:0px;
     padding:0px;*/
-    /*vertical-align: top;*/
+    vertical-align: top;
 }
 div.row div{
     width:20px;
@@ -22,6 +22,7 @@ div.coin{
 
 body{
     /*background-color: black;*/
+    margin:0px;
 }
 
 div.pacman{
