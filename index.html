@@ -22,6 +22,11 @@
                         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
                 ];
 
+                var pacman = {
+                    x: 20,
+                    y: 20
+                };
+
                 function displayWorld(){
                     var output = '';
 
@@ -40,15 +45,40 @@
                         }
                         output += "</div>"
                     }
-                    console.log(output);
+                    // console.log(output);
                     document.getElementById('world').innerHTML = output;
                 }
+
+                function displayPacman(){
+                    document.getElementById('pacman').style.left = pacman.x + "px";
+                    document.getElementById('pacman').style.top = pacman.y + "px";
+                }
+
                 displayWorld();
+                displayPacman();
+
+                document.onkeydown = function(e){
+                    if(e.keyCode == 37){
+                        pacman.x -= 20;
+                    }
+                    else if(e.keyCode == 39){
+                        pacman.x += 20;
+                    }
+                    else if(e.keyCode == 38){
+                        pacman.y -= 20;
+                    }
+                    else if(e.keyCode == 40){
+                        pacman.y += 20;
+                    }
+                    console.log(e.keyCode);
+                    displayPacman();
+                }
+
             });
         </script>
     </head>
     <body>
         <div id="world"></div>
-        
+        <div id="pacman"></div>
     </body>
 </html>
