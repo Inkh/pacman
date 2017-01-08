@@ -103,17 +103,22 @@
                     displayWorld();
                 }
 
+                var stopMovement = true;
+
+                function left(){
+                    if (stopMovement === true){
+                        var stopLeft = setInterval(continueLeft,100);
+                    }
+                }
+                var stopLeft = setInterval(continueLeft,100);
+
                 document.onkeydown = function(e){
                     if(e.keyCode == 37 && world[pacman.y][pacman.x-1] !== 2){
                         var stopLeft = setInterval(continueLeft,100);
-                        // continueLeft();
-                        // setInterval(continueLeft,100);
-                        // var stopLeft = setInterval(continueLeft,100);
+                        // left();
                     }
                     else if(e.keyCode == 39 && world[pacman.y][pacman.x+1] !== 2){
                         clearInterval(stopLeft);
-                        continueRight();
-                        setInterval(continueRight,100);
                     }
                     else if(e.keyCode == 38 && world[pacman.y-1][pacman.x] !== 2){
                         pacman.y--;
