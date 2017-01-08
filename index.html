@@ -91,6 +91,28 @@
                         displayWorld();
                     }
                 }
+                function moveUp(){
+                    if(world[pacman.y-1][pacman.x] !== 2){
+                        pacman.y--;
+                    }
+                    if(world[pacman.y][pacman.x] == 1){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 10
+                        displayScore();
+                        displayWorld();
+                    }
+                }
+                function moveDown(){
+                    if(world[pacman.y+1][pacman.x] !== 2){
+                        pacman.y++;
+                    }
+                    if(world[pacman.y][pacman.x] == 1){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 10
+                        displayScore();
+                        displayWorld();
+                    }
+                }
 
                 function continueRight(){
                     moveRight();
@@ -102,38 +124,65 @@
                     displayPacman();
                     displayWorld();
                 }
-
-                var stopMovement = true;
-
-                function left(){
-                    if (stopMovement === true){
-                        var stopLeft = setInterval(continueLeft,100);
-                    }
+                function continueUp(){
+                    moveUp();
+                    displayPacman();
+                    displayWorld();
                 }
-                var stopLeft = setInterval(continueLeft,100);
+                function continueDown(){
+                    moveDown();
+                    displayPacman();
+                    displayWorld();
+                }
+
+                var goLeft;
+                var goRight;
+                var goUp;
+                var goDown;
+                function left(){
+                    goLeft = setInterval(continueLeft,100);
+                }
+                function right(){
+                    goRight = setInterval(continueRight,100);
+                }
+                function up(){
+                    goRight = setInterval(continueUp,100);
+                }
+                function down(){
+                    goRight = setInterval(continueDown,100);
+                }
+                function stopMovement(){
+                    clearInterval(goLeft);
+                    clearInterval(goRight);
+                    clearInterval(goDown);
+                    clearInterval(goUp);
+                }
 
                 document.onkeydown = function(e){
                     if(e.keyCode == 37 && world[pacman.y][pacman.x-1] !== 2){
-                        var stopLeft = setInterval(continueLeft,100);
-                        // left();
+                        stopMovement();
+                        left();
                     }
                     else if(e.keyCode == 39 && world[pacman.y][pacman.x+1] !== 2){
-                        clearInterval(stopLeft);
+                        stopMovement();
+                        right();
                     }
                     else if(e.keyCode == 38 && world[pacman.y-1][pacman.x] !== 2){
-                        pacman.y--;
+                        stopMovement();
+                        up();
                     }
                     else if(e.keyCode == 40 && world[pacman.y+1][pacman.x] !== 2){
-                        pacman.y++;
+                        stopMovement();
+                        down();
                     }
-                    if(world[pacman.y][pacman.x] == 1){
-                        world[pacman.y][pacman.x] = 0;
-                        score += 10
-                        displayScore();
-                        displayWorld();
-                    }
-                    console.log(e.keyCode);
-                    displayPacman();
+                    // if(world[pacman.y][pacman.x] == 1){
+                    //     world[pacman.y][pacman.x] = 0;
+                    //     score += 10
+                    //     displayScore();
+                    //     displayWorld();
+                    // }
+                    // console.log(e.keyCode);
+                    // displayPacman();
                 }
 
             });
