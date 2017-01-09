@@ -19,7 +19,12 @@ div.coin{
     background-repeat: no-repeat;
     background-position: center;
 }
-
+div.cherry{
+    background-image: url('gman.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    display:inline-block;
+}
 div.black{
     color:black;
     background-color: black;
@@ -37,10 +42,11 @@ body{
 div.wrapper{
     background-color: black;
     /*text-align: center;*/
-    width:380px;
+    width:450px;
     height:440px;
     box-sizing: border-box;
     /*padding:10px;*/
+    display:inline-block;
 }
 div#pacman{
     background-image: url('pacman.gif');
@@ -54,10 +60,11 @@ div#pacman{
 }
 div#score{
     display:inline-block;
-    border: 1px solid black;
-    width:30px;
+    border: 2px solid black;
+    width:90px;
     height:30px;
     color: black;
     text-align: center;
-    padding:7px;
+    padding:3px;
+    box-sizing: border-box;
 }
