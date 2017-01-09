@@ -89,6 +89,12 @@
                         displayScore();
                         displayWorld();
                     }
+                    if(world[pacman.y][pacman.x] == 5){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 100
+                        displayScore();
+                        displayWorld();
+                    }
                 }
 
                 function moveRight(){
@@ -98,6 +104,12 @@
                     if(world[pacman.y][pacman.x] == 1){
                         world[pacman.y][pacman.x] = 0;
                         score += 10
+                        displayScore();
+                        displayWorld();
+                    }
+                    if(world[pacman.y][pacman.x] == 5){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 100
                         displayScore();
                         displayWorld();
                     }
@@ -112,6 +124,12 @@
                         displayScore();
                         displayWorld();
                     }
+                    if(world[pacman.y][pacman.x] == 5){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 100
+                        displayScore();
+                        displayWorld();
+                    }
                 }
                 function moveDown(){
                     if(world[pacman.y+1][pacman.x] !== 2){
@@ -120,6 +138,12 @@
                     if(world[pacman.y][pacman.x] == 1){
                         world[pacman.y][pacman.x] = 0;
                         score += 10
+                        displayScore();
+                        displayWorld();
+                    }
+                    if(world[pacman.y][pacman.x] == 5){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 100
                         displayScore();
                         displayWorld();
                     }
@@ -215,7 +239,7 @@
                     displayWorld();
                     console.log("appear");
                 }
-                setTimeout(cherryMaker,100);
+                setTimeout(cherryMaker,10000);
             });
         </script>
     </head>

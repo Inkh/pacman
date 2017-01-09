@@ -20,10 +20,11 @@ div.coin{
     background-position: center;
 }
 div.cherry{
-    background-image: url('gman.gif');
+    background-image: url('cherry_bonus.png');
     background-repeat: no-repeat;
     background-position: center;
     display:inline-block;
+    background-size:cover;
 }
 div.black{
     color:black;
