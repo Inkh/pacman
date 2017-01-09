@@ -15,7 +15,7 @@ div.brick{
     background-color: blue;
 }
 div.coin{
-    background-image: url('gman.gif');
+    background-image: url('coin.gif');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -34,6 +34,14 @@ body{
     /*background-color: gray;*/
 }
 
+div.wrapper{
+    background-color: black;
+    /*text-align: center;*/
+    width:380px;
+    height:440px;
+    box-sizing: border-box;
+    /*padding:10px;*/
+}
 div#pacman{
     background-image: url('pacman.gif');
     background-repeat: no-repeat;
@@ -45,6 +53,7 @@ div#pacman{
     position: absolute;
 }
 div#score{
+    display:inline-block;
     border: 1px solid black;
     width:30px;
     height:30px;
