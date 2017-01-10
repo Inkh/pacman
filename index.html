@@ -239,7 +239,22 @@
                     displayWorld();
                     console.log("appear");
                 }
-                setTimeout(cherryMaker,10000);
+
+                function cherrySetter(){
+                    var cherry = false;
+                    cherryMaker();
+                    while(cherry = false){
+                        console.log("working?");
+                        if(world[x][x] !== 5){
+                            cherryMaker();
+                        }
+                        else if(world[x][y] === 5){
+                            cherry = true;
+                        }
+                    }
+                }
+
+                setTimeout(cherrySetter(),100);
             });
         </script>
     </head>
